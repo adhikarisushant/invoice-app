@@ -7,13 +7,13 @@ npm install
 
 ```
 
-Then, run the json server:
+Then, run the json server watch mode in one terminal:
 
 ```bash
 npm run db
 ```
 
-Then, run the development server:
+After, run the development server on other terminal:
 
 ```bash
 npm run dev
