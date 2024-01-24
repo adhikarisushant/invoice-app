@@ -294,9 +294,13 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
             // Calculate the sum of discounts
             const totalDiscount = invoiceData.reduce((acc, item) => acc + item.discount, 0);
 
+            // @ts-ignore
+            setNonTaxable(totalRate);
+
+
             setAmount(totalRate)
             setDiscount(totalDiscount)
-
+            setValue("invoice.nonTaxable", `${totalRate}`);
             setValue("invoice.total", `${amount}`);
             setValue("invoice.discount", `${discount}`);
         }
@@ -305,21 +309,15 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
 
     useEffect(() => {
         // @ts-ignore
-        setNonTaxable(amount + discount)
-        setValue("invoice.nonTaxable", `${nonTaxable}`);
-    }, [amount, discount])
-
-    useEffect(() => {
-        // @ts-ignore
-        setTaxable((nonTaxable * 0.13).toFixed(2))
+        setTaxable(nonTaxable - discount)
         setValue("invoice.taxable", `${taxable}`);
-    }, [nonTaxable])
+    }, [nonTaxable, discount])
 
     useEffect(() => {
         // @ts-ignore
-        setGrandTotal(nonTaxable + taxable)
+        setGrandTotal(taxable + (taxable * 0.13))
         setValue("invoice.grandTotal", `${grandTotal}`);
-    }, [nonTaxable, taxable])
+    }, [taxable])
 
     return (
         <>
