@@ -52,7 +52,7 @@
   "products": [
     {
       "id": "1",
-      "name": "Doking Black Tapioca Pearls Boba for Bubble Tea - 1 Kg",
+      "name": "Doking Black Tapioca-1 Kg",
       "batch": "WABN",
       "warehouse": "Birgunj",
       "rate": 1234
@@ -80,28 +80,28 @@
     },
     {
       "id": "5",
-      "name": "Coca-Cola Original Taste Soft Drink PET Bottle 250ML",
+      "name": "Coca-Cola Original Bottle 250ML",
       "batch": "EDTL",
       "warehouse": "Baneshwor",
       "rate": 365
     },
     {
       "id": "6",
-      "name": "Doking Black Tapioca Pearls Boba for Bubble Tea - 1 Kg",
+      "name": "Doking for Bubble Tea - 1 Kg",
       "batch": "OENG",
       "warehouse": "Birgunj",
       "rate": 3416
     },
     {
       "id": "7",
-      "name": "Coca-Cola Original Taste Soft Drink PET Bottle 2.25L",
+      "name": "Coca-Cola Original Taste Drink Bottle 2.25L",
       "batch": "KNJK",
       "warehouse": "Bhaktapur",
       "rate": 2436
     },
     {
       "id": "8",
-      "name": "Rage Cold Coffee Hazelnut Latte 240ML",
+      "name": "Rage Cold Coffee Latte 240ML",
       "batch": "YMTI",
       "warehouse": "Biratnagar",
       "rate": 3246
@@ -654,6 +654,42 @@
         "taxable": "7802.990000000001",
         "vat": "13%",
         "grandTotal": "NaN"
+      }
+    },
+    {
+      "id": "ae51",
+      "supplierName": "4",
+      "deliveryDate": "2024-01-24T18:15:00.000Z",
+      "referenceNo": "8978935",
+      "invoiceItems": [
+        {
+          "productId": "2",
+          "batch": "KPIT",
+          "warehouse": "Biratnagar",
+          "quantity": 1220,
+          "rate": 234,
+          "discount": 98465,
+          "amount": 187015
+        },
+        {
+          "productId": "1",
+          "batch": "WABN",
+          "warehouse": "Birgunj",
+          "quantity": 234120,
+          "rate": 1234,
+          "discount": 874986,
+          "amount": 288029094
+        }
+      ],
+      "note": "Notes",
+      "conditions": "Hello bijan dai",
+      "invoice": {
+        "total": "581640",
+        "discount": "985774",
+        "nonTaxable": "289337640",
+        "taxable": "-404134",
+        "vat": "13%",
+        "grandTotal": "-456671.42"
       }
     }
   ]

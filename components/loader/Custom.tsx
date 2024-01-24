@@ -5,11 +5,21 @@ import Loader from "./Loader";
 import ServerError from "../server-error";
 
 export const Custom: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const { isLoading: supplierLoading, error } = useSuppliersQuery({});
-    const { isLoading: productsLoading, isError } = useProductsQuery({});
-    const { isLoading: transactionsLoading } = useTransactionsQuery({});
+    const { isLoading: supplierLoading, isError: supplierIsError } = useSuppliersQuery({});
+    const { isLoading: productsLoading, isError: productsIsError } = useProductsQuery({});
+    const { isLoading: transactionsLoading, isError: transactionsIsError } = useTransactionsQuery({});
 
-    if (error) {
+    if (supplierIsError) {
+        return (
+            <ServerError />
+        )
+    }
+    if (productsIsError) {
+        return (
+            <ServerError />
+        )
+    }
+    if (transactionsIsError) {
         return (
             <ServerError />
         )

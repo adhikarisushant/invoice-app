@@ -38,10 +38,10 @@ import { Calendar } from "@/components/ui/calendar";
 import { CalendarIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
-import { ScrollArea } from "../ui/scroll-area";
 import { useProductsQuery, useSuppliersQuery } from "@/redux/features/api/apiSlice";
 import ProductComboBox from "./ProductComboBox";
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/components/ui/use-toast";
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface InvoiceData {
     index: number | null;
@@ -342,7 +342,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                     onSubmit={handleSubmit(onSubmit)}
                     className="space-y-8 w-full"
                 >
-                    <div className="md:grid md:grid-cols-3 gap-8">
+                    <div className="md:grid md:grid-cols-3 gap-8 2xl:gap-28">
                         {/* select supplier name */}
                         <FormField
                             control={form.control}
@@ -386,7 +386,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                                                         form.setValue("supplierName", supplier.id);
 
                                                                     }}
-                                                                    className="h-10 cursor-pointer"
+                                                                    className="h-10 cursor-pointer font-medium"
                                                                 >
                                                                     <Check
                                                                         className={cn(
@@ -474,17 +474,17 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                     <Separator />
 
                     <Table>
-                        <TableCaption onClick={() => append({ productId: "", batch: "", warehouse: "", quantity: 0, rate: 0, discount: 0, amount: 0 })} className="!max-w-80 cursor-pointer hover:text-green-700 hover:underline underline-offset-4">Add code or product</TableCaption>
+                        <TableCaption onClick={() => append({ productId: "", batch: "", warehouse: "", quantity: 0, rate: 0, discount: 0, amount: 0 })} className="!max-w-80 cursor-pointer hover:!text-green-700 hover:underline underline-offset-4 !text-neutral-700 dark:!text-neutral-100 font-medium">Add code or product</TableCaption>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="w-[40%]">Item/Product</TableHead>
-                                <TableHead className="w-[10%]">Batch</TableHead>
-                                <TableHead className="w-[10%]">Warehouse</TableHead>
-                                <TableHead className="text-right w-[10%]">Qty</TableHead>
-                                <TableHead className="w-[10%]">Rate</TableHead>
-                                <TableHead className="w-[10%]">Discount</TableHead>
-                                <TableHead className="w-[10%]">Amount</TableHead>
-                                <TableHead className="w-[5%]"></TableHead>
+                                <TableHead className="w-[90%] md:w-[25%] 2xl:w-[30%]">Item/Product</TableHead>
+                                <TableHead className="w-[80%] md:w-[10%] 2xl:w-[8%]">Batch</TableHead>
+                                <TableHead className="w-[80%] md:w-[10%] 2xl:w-[8%]">Warehouse</TableHead>
+                                <TableHead className="text-right w-[80%] md:w-[10%] 2xl:w-[10%]">Qty</TableHead>
+                                <TableHead className="text-right w-[80%] md:w-[10%] 2xl:w-[12%]">Rate</TableHead>
+                                <TableHead className="text-right w-[80%] md:w-[10%] 2xl:w-[12%]">Discount</TableHead>
+                                <TableHead className="text-right w-[80%] md:w-[16%] 2xl:w-[12%]">Amount</TableHead>
+                                <TableHead className="w-[3%]"></TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -503,23 +503,23 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                         </TableCell>
 
                                         <TableCell>
-                                            <Input type="text" disabled placeholder="" {...register(`invoiceItems.${index}.batch` as const)} />
+                                            <Input className="!px-0 2xl:!px-2" type="text" disabled placeholder="" {...register(`invoiceItems.${index}.batch` as const)} />
                                             <p className="error">{errors?.invoiceItems?.[`${index}`]?.batch?.message}</p>
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="text" disabled placeholder="" {...register(`invoiceItems.${index}.warehouse` as const)} />
+                                            <Input className="!px-0 2xl:!px-2" type="text" disabled placeholder="" {...register(`invoiceItems.${index}.warehouse` as const)} />
                                             <p className="error">{errors?.invoiceItems?.[`${index}`]?.warehouse?.message}</p>
                                         </TableCell>
                                         <TableCell>
-                                            <Input min="0" className="text-right" type="number" placeholder="" {...register(`invoiceItems.${index}.quantity` as const, { valueAsNumber: true })} onInput={(event) => calculateAmount(index)} />
+                                            <Input min="0" className="text-right !px-0 2xl:!px-2" type="number" placeholder="" {...register(`invoiceItems.${index}.quantity` as const, { valueAsNumber: true })} onInput={(event) => calculateAmount(index)} />
                                             <p className="error">{errors?.invoiceItems?.[`${index}`]?.quantity?.message}</p>
                                         </TableCell>
                                         <TableCell>
-                                            <Input className="text-right" disabled type="number" placeholder="" {...register(`invoiceItems.${index}.rate` as const)} />
+                                            <Input className="text-right !px-0 2xl:!px-2" disabled type="number" placeholder="" {...register(`invoiceItems.${index}.rate` as const)} />
                                             <p className="error">{errors?.invoiceItems?.[`${index}`]?.rate?.message}</p>
                                         </TableCell>
                                         <TableCell>
-                                            <Input min="0" className="text-right" type="number" placeholder="" {...register(`invoiceItems.${index}.discount` as const, { valueAsNumber: true })} onInput={(event) => calculateAmount(index)} />
+                                            <Input min="0" className="!px-0 2xl:!px-2 text-right" type="number" placeholder="" {...register(`invoiceItems.${index}.discount` as const, { valueAsNumber: true })} onInput={(event) => calculateAmount(index)} />
                                             <p className="error">{errors?.invoiceItems?.[`${index}`]?.discount?.message}</p>
                                         </TableCell>
                                         <TableCell>
@@ -552,8 +552,8 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                                 {...field}
                                             />
                                         </FormControl>
-                                        <FormDescription>
-                                            *This will appear on print
+                                        <FormDescription className="font-medium">
+                                            * This will appear on print
                                         </FormDescription>
                                         <FormMessage />
                                     </FormItem>
@@ -610,7 +610,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                         {...field}
                                     />
                                 </FormControl>
-                                <FormDescription>
+                                <FormDescription className="font-medium">
                                     *This will appear on print
                                 </FormDescription>
                                 <FormMessage />

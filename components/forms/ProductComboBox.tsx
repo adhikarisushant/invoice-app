@@ -65,7 +65,7 @@ const ProductComboBox: React.FC<Props> = ({ handleSelectProduct, index, allProdu
                 <Command>
                     <CommandInput placeholder="Search Products..." />
                     <CommandEmpty>No Product found.</CommandEmpty>
-                    <ScrollArea className="h-72 rounded-md border">
+                    <ScrollArea className="h-60 rounded-md border">
                         <CommandGroup>
                             {allProductsData.map((product: Product) => (
                                 <CommandItem
@@ -76,7 +76,7 @@ const ProductComboBox: React.FC<Props> = ({ handleSelectProduct, index, allProdu
                                         setOpenPop(false)
                                         handleSelectProduct(index, currentValue)
                                     }}
-                                    className="h-24 cursor-pointer !pr-4"
+                                    className="h-28 2xl:h-16 py-14 cursor-pointer !pr-4"
                                 >
                                     <Check
                                         className={cn(
@@ -86,14 +86,14 @@ const ProductComboBox: React.FC<Props> = ({ handleSelectProduct, index, allProdu
                                     />
 
                                     <div className="w-full flex items-center justify-between">
-                                        <div className="self-start flex-col">
+                                        <div className="self-start flex-col justify-between space-y-4">
                                             <p className="text-sm font-medium text-slate-800 dark:text-white">{product.name}</p>
-                                            <div className="flex items-end justify-start space-x-12 space-y-4">
-                                                <p className="text-sm font-medium text-slate-700 dark:text-white">Bottles</p>
-                                                <p className="text-sm font-medium text-slate-700 dark:text-white">Batch: <span className="text-green-700 dark:text-green-500">{product.batch}</span></p>
-                                            </div>
+                                            {/* <div className="flex items-end justify-start space-x-12 space-y-4">
+                                                <p className="text-sm font-medium text-slate-700 dark:text-white">Bottles</p> */}
+                                            <p className="text-sm font-medium text-slate-700 dark:text-white">Batch: <span className="text-green-700 dark:text-green-500">{product.batch}</span></p>
+                                            {/* </div> */}
                                         </div>
-                                        <div className="self-end flex-col space-y-4">
+                                        <div className="self-end flex-col justify-between space-y-4">
                                             <p className="text-right text-sm font-medium text-slate-800 dark:text-white">{product.warehouse}</p>
                                             <p className="text-right text-sm font-medium text-slate-700 dark:text-white">Rs.{product.rate}</p>
                                         </div>

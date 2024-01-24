@@ -19,7 +19,7 @@ export default function ServerError() {
                 500
             </span>
             <h2 className="my-2 font-heading text-2xl font-bold">
-                Server&apos;s sleepingb
+                Server&apos;s Sleeping
             </h2>
             <p>
                 Sorry, the request you are making has failed due to Server Error. Please check if the JSON Server is running properly on watch mode.
