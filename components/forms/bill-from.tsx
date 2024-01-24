@@ -83,7 +83,15 @@ const formSchema = z.object({
     referenceNo: z.string().min(2, { message: "Reference No. must be more than 2 characters." }).max(30),
     invoiceItems: z.array(ProductSchema),
     note: z.string(),
-    conditions: z.string()
+    conditions: z.string(),
+    invoice: z.object({
+        total: z.string().min(1, { message: "Total is Required" }),
+        discount: z.string(),
+        nonTaxable: z.string().min(1, { message: "Non-Taxable is Required" }),
+        taxable: z.string().min(1, { message: "Taxable is Required" }),
+        vat: z.string(),
+        grandTotal: z.string().min(1, { message: "Grand Total is Required" })
+    })
 });
 
 export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
@@ -106,29 +114,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     const [grandTotal, setGrandTotal] = useState<Number>(0);
     const [invoiceData, setInvoiceData] = useState<InvoiceData[]>([])
 
-    useEffect(() => {
-        if (invoiceData.length > 0) {
-            // Calculate the sum of rates
-            // @ts-ignore
-            const totalRate = invoiceData.reduce((acc, item) => acc + (item.quantity * item.rate), 0);
-            setAmount(totalRate)
 
-            // Calculate the sum of discounts
-            // @ts-ignore
-            const totalDiscount = invoiceData.reduce((acc, item) => acc + item.discount, 0);
-            setDiscount(totalDiscount)
-
-            // @ts-ignore
-            setNonTaxable(amount + discount)
-
-            // @ts-ignore
-            setTaxable(nonTaxable * 0.13)
-
-            // @ts-ignore
-            setGrandTotal(nonTaxable + taxable)
-        }
-
-    }, [invoiceData])
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -137,7 +123,15 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
             referenceNo: "",
             invoiceItems: [{ productId: "", batch: "", warehouse: "", quantity: 0, rate: 0, discount: 0, amount: 0 }],
             note: "",
-            conditions: ""
+            conditions: "",
+            invoice: {
+                total: "",
+                discount: "",
+                nonTaxable: "",
+                taxable: "",
+                vat: "13%",
+                grandTotal: ""
+            }
         }
     })
 
@@ -269,6 +263,38 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
         setWidth(document.getElementById('supplierButtonId').getBoundingClientRect().width);
 
     }, [width])
+
+    useEffect(() => {
+        if (invoiceData.length > 0) {
+
+            // Calculate the sum of rates
+            // @ts-ignore
+            const totalRate = invoiceData.reduce((acc, item) => acc + (item.quantity * item.rate), 0);
+            setAmount(totalRate)
+
+            // Calculate the sum of discounts
+            // @ts-ignore
+            const totalDiscount = invoiceData.reduce((acc, item) => acc + item.discount, 0);
+            setDiscount(totalDiscount)
+
+            // @ts-ignore
+            setNonTaxable(amount + discount)
+
+            // @ts-ignore
+            setTaxable(nonTaxable * 0.13)
+
+            // @ts-ignore
+            setGrandTotal(nonTaxable + taxable)
+
+            setValue("invoice.total", `${amount}`);
+            setValue("invoice.discount", `${discount}`);
+            setValue("invoice.nonTaxable", `${nonTaxable}`);
+            setValue("invoice.taxable", `${taxable}`);
+            setValue("invoice.vat", "13%");
+            setValue("invoice.grandTotal", `${grandTotal}`);
+        }
+
+    }, [invoiceData])
 
 
 
