@@ -115,7 +115,6 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     const [invoiceData, setInvoiceData] = useState<InvoiceData[]>([])
 
 
-
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -206,7 +205,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     }
 
     const addOrUpdateInvoiceObject = (newObj: InvoiceData): void => {
-        // Check if object with the same id exists in the array
+        // Check if object with the same index exists in the array
         const existingObjIndex = invoiceData.findIndex(obj => obj.index === newObj.index);
 
         if (existingObjIndex !== -1) {
@@ -220,6 +219,17 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
         }
     };
 
+    const removeInvoiceObject = (index: any): void => {
+        // Check if object with the same index exists in the array
+        const existingObjIndex = invoiceData.findIndex(obj => obj.index === index);
+
+        if (existingObjIndex !== -1) {
+            const newArray = [...invoiceData];
+            newArray.splice(existingObjIndex, 1);
+            setInvoiceData(newArray)
+        }
+    }
+
 
 
     let inputTimer: any;
@@ -232,11 +242,6 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
         // Set a new timeout for 5 seconds
         inputTimer = setTimeout(() => {
             const values = getValues([`invoiceItems.${index}.productId`, `invoiceItems.${index}.quantity`, `invoiceItems.${index}.rate`, `invoiceItems.${index}.discount`, `invoiceItems.${index}.amount`])
-            // console.log("values->", values)
-            // console.log("product->", values[0])
-            // console.log("quantity->", values[1])
-            // console.log("rate->", values[2])
-            // console.log("discount->", values[3])
 
             const amount = (values[1] * values[2]) - values[3];
 
@@ -252,7 +257,6 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
 
             setValue(`invoiceItems.${index}.amount`, amount);
 
-            console.log("amount->", values[4])
         }, 100);
     }
 
@@ -496,7 +500,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                         <TableCell>
                                             <Input className="text-right w-full" disabled type="number" placeholder="" {...register(`invoiceItems.${index}.amount` as const, { valueAsNumber: true })} />
                                         </TableCell>
-                                        <TableCell><X onClick={() => remove(index)} color="#FF0000" className="cursor-pointer hover:scale-125" /></TableCell>
+                                        <TableCell><X onClick={() => { remove(index); removeInvoiceObject(index); }} color="#FF0000" className="cursor-pointer hover:scale-125" /></TableCell>
                                     </TableRow>
 
                                 );
