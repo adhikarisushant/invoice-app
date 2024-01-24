@@ -100,8 +100,10 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     const action = initialData ? "Save changes" : "Create";
 
     const [amount, setAmount] = useState<Number>(0);
-    console.log("reduce amount-", amount)
     const [discount, setDiscount] = useState<Number>(0);
+    const [nonTaxable, setNonTaxable] = useState<Number>(0);
+    const [taxable, setTaxable] = useState<Number>(0);
+    const [grandTotal, setGrandTotal] = useState<Number>(0);
     const [invoiceData, setInvoiceData] = useState<InvoiceData[]>([])
 
     useEffect(() => {
@@ -115,6 +117,15 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
             // @ts-ignore
             const totalDiscount = invoiceData.reduce((acc, item) => acc + item.discount, 0);
             setDiscount(totalDiscount)
+
+            // @ts-ignore
+            setNonTaxable(amount + discount)
+
+            // @ts-ignore
+            setTaxable(nonTaxable * 0.13)
+
+            // @ts-ignore
+            setGrandTotal(nonTaxable + taxable)
         }
 
     }, [invoiceData])
@@ -134,7 +145,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
 
     const { errors } = formState;
 
-    console.log("error->", errors);
+    // console.log("error->", errors);
 
     const { fields, append, remove } = useFieldArray({
         name: "invoiceItems",
@@ -510,21 +521,21 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                     </TableRow>
                                     <TableRow>
                                         <TableCell className="font-medium">Non Taxable Total</TableCell>
-                                        <TableCell className="text-right">0</TableCell>
+                                        <TableCell className="text-right">Rs. {nonTaxable.toString()}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell className="font-medium">Taxable Total</TableCell>
-                                        <TableCell className="text-right">0</TableCell>
+                                        <TableCell className="text-right">Rs. {taxable.toString()}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell className="font-medium">VAT</TableCell>
-                                        <TableCell className="text-right">0</TableCell>
+                                        <TableCell className="text-right">13%</TableCell>
                                     </TableRow>
                                 </TableBody>
                                 <TableFooter>
                                     <TableRow>
                                         <TableCell>Grand Total</TableCell>
-                                        <TableCell className="text-right">Rs. 2,50000</TableCell>
+                                        <TableCell className="text-right">Rs. {grandTotal.toString()}</TableCell>
                                     </TableRow>
                                 </TableFooter>
                             </Table>
