@@ -565,6 +565,96 @@
         "vat": "13%",
         "grandTotal": "NaN"
       }
+    },
+    {
+      "id": "be5d",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "sgad",
+      "invoiceItems": [
+        {
+          "productId": "2",
+          "batch": "KPIT",
+          "warehouse": "Biratnagar",
+          "quantity": 2,
+          "rate": 234,
+          "discount": 10,
+          "amount": 458
+        }
+      ],
+      "note": "",
+      "conditions": "",
+      "invoice": {
+        "total": "234",
+        "discount": "10",
+        "nonTaxable": "236",
+        "taxable": "30.42",
+        "vat": "13%",
+        "grandTotal": "234"
+      }
+    },
+    {
+      "id": "2a1a",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "123423",
+      "invoiceItems": [
+        {
+          "productId": "2",
+          "batch": "KPIT",
+          "warehouse": "Biratnagar",
+          "quantity": 10,
+          "rate": 234,
+          "discount": 220,
+          "amount": 2120
+        },
+        {
+          "productId": "11",
+          "batch": "AGAF",
+          "warehouse": "Pokhara",
+          "quantity": 12,
+          "rate": 234,
+          "discount": 20,
+          "amount": 2788
+        },
+        {
+          "productId": "11",
+          "batch": "AGAF",
+          "warehouse": "Pokhara",
+          "quantity": 20,
+          "rate": 234,
+          "discount": 11,
+          "amount": 4669
+        },
+        {
+          "productId": "5",
+          "batch": "EDTL",
+          "warehouse": "Baneshwor",
+          "quantity": 123,
+          "rate": 365,
+          "discount": 345,
+          "amount": 44550
+        },
+        {
+          "productId": "10",
+          "batch": "SVCU",
+          "warehouse": "Pokhara",
+          "quantity": 2,
+          "rate": 2346,
+          "discount": 12,
+          "amount": 4680
+        }
+      ],
+      "note": "adfsad",
+      "conditions": "asd this",
+      "invoice": {
+        "total": "59415",
+        "discount": "608",
+        "nonTaxable": "60023",
+        "taxable": "7802.990000000001",
+        "vat": "13%",
+        "grandTotal": "NaN"
+      }
     }
   ]
 }

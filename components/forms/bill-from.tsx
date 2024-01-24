@@ -33,6 +33,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
+import axios from "axios";
 import { Calendar } from "@/components/ui/calendar";
 import { CalendarIcon } from "lucide-react";
 import { Input } from "../ui/input";
@@ -54,6 +55,16 @@ interface Supplier {
     id: string;
     name: string
 }
+
+interface InvoiceObj {
+    total: number
+    discount: number,
+    nonTaxable: number,
+    taxable: number,
+    vat: "string",
+    grandTotal: number
+}
+
 
 interface Product {
     id: string;
@@ -112,7 +123,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     const [nonTaxable, setNonTaxable] = useState<Number>(0);
     const [taxable, setTaxable] = useState<Number>(0);
     const [grandTotal, setGrandTotal] = useState<Number>(0);
-    const [invoiceData, setInvoiceData] = useState<InvoiceData[]>([])
+    const [invoiceData, setInvoiceData] = useState<InvoiceData[]>([]);
 
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -146,16 +157,10 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     })
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        // setLoading(true);
+        setLoading(true);
         console.log("data->", { values })
         try {
-            const response = await fetch('http://localhost:8000/transactions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(values),
-            });
+            const response = await axios.post('http://localhost:8000/transactions', JSON.stringify(values));
 
             console.log("data->", { values })
         } catch (error: any) {
@@ -166,7 +171,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                 title: "Uh oh! Something went wrong.",
                 description: "There was a problem with your request.",
             })
-            // setLoading(false);
+            setLoading(false);
         } finally {
             reset()
             setLoading(false);
@@ -175,7 +180,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                 title: "Success.",
                 description: "POST Request was Successful.",
             });
-            // router.push("/dashboard");
+            router.push("/dashboard");
         }
     }
 
@@ -253,10 +258,20 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                 rate: values[2],
                 discount: values[3]
             }
-
-            addOrUpdateInvoiceObject(newObj)
-
             setValue(`invoiceItems.${index}.amount`, amount);
+
+            // Function to check if all keys in the object have values
+            const areAllKeysFilled = (obj: InvoiceData): boolean => {
+                const values = Object.values(obj);
+                return values.every((value) => value !== undefined && value !== null && value !== '');
+            };
+
+            // Use the function to check if all keys are filled
+            const allKeysFilled = areAllKeysFilled(newObj);
+
+            if (allKeysFilled) {
+                addOrUpdateInvoiceObject(newObj)
+            }
 
         }, 100);
     }
@@ -271,37 +286,40 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
 
     useEffect(() => {
         if (invoiceData.length > 0) {
-
+            // @ts-ignore
             // Calculate the sum of rates
-            // @ts-ignore
             const totalRate = invoiceData.reduce((acc, item) => acc + (item.quantity * item.rate), 0);
-            setAmount(totalRate)
 
+            // @ts-ignore
             // Calculate the sum of discounts
-            // @ts-ignore
             const totalDiscount = invoiceData.reduce((acc, item) => acc + item.discount, 0);
+
+            setAmount(totalRate)
             setDiscount(totalDiscount)
-
-            // @ts-ignore
-            setNonTaxable(amount + discount)
-
-            // @ts-ignore
-            setTaxable(nonTaxable * 0.13)
-
-            // @ts-ignore
-            setGrandTotal(nonTaxable + taxable)
 
             setValue("invoice.total", `${amount}`);
             setValue("invoice.discount", `${discount}`);
-            setValue("invoice.nonTaxable", `${nonTaxable}`);
-            setValue("invoice.taxable", `${taxable}`);
-            setValue("invoice.vat", "13%");
-            setValue("invoice.grandTotal", `${grandTotal}`);
         }
 
     }, [invoiceData])
 
+    useEffect(() => {
+        // @ts-ignore
+        setNonTaxable(amount + discount)
+        setValue("invoice.nonTaxable", `${nonTaxable}`);
+    }, [amount, discount])
 
+    useEffect(() => {
+        // @ts-ignore
+        setTaxable((nonTaxable * 0.13).toFixed(2))
+        setValue("invoice.taxable", `${taxable}`);
+    }, [nonTaxable])
+
+    useEffect(() => {
+        // @ts-ignore
+        setGrandTotal(nonTaxable + taxable)
+        setValue("invoice.grandTotal", `${grandTotal}`);
+    }, [nonTaxable, taxable])
 
     return (
         <>
