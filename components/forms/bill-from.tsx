@@ -146,7 +146,8 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     })
 
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        setLoading(true);
+        // setLoading(true);
+        console.log("data->", { values })
         try {
             const response = await fetch('http://localhost:8000/transactions', {
                 method: 'POST',
@@ -165,7 +166,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                 title: "Uh oh! Something went wrong.",
                 description: "There was a problem with your request.",
             })
-            setLoading(false);
+            // setLoading(false);
         } finally {
             reset()
             setLoading(false);
@@ -174,7 +175,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                 title: "Success.",
                 description: "POST Request was Successful.",
             });
-            router.push("/dashboard");
+            // router.push("/dashboard");
         }
     }
 

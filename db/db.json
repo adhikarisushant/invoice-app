@@ -511,6 +511,60 @@
         "vat": "13%",
         "grandTotal": "0"
       }
+    },
+    {
+      "id": "5c0d",
+      "supplierName": "2",
+      "deliveryDate": "2024-01-24T18:15:00.000Z",
+      "referenceNo": "hellosangam",
+      "invoiceItems": [
+        {
+          "productId": "4",
+          "batch": "LERS",
+          "warehouse": "Bhaktapur",
+          "quantity": 10,
+          "rate": 2346,
+          "discount": 200,
+          "amount": 23260
+        },
+        {
+          "productId": "7",
+          "batch": "KNJK",
+          "warehouse": "Bhaktapur",
+          "quantity": 20,
+          "rate": 2436,
+          "discount": 1000,
+          "amount": 47720
+        },
+        {
+          "productId": "10",
+          "batch": "SVCU",
+          "warehouse": "Pokhara",
+          "quantity": 25,
+          "rate": 2346,
+          "discount": 10,
+          "amount": 58640
+        },
+        {
+          "productId": "11",
+          "batch": "AGAF",
+          "warehouse": "Pokhara",
+          "quantity": 15,
+          "rate": 234,
+          "discount": 250,
+          "amount": 3260
+        }
+      ],
+      "note": "I am Sushant.",
+      "conditions": "no terms.",
+      "invoice": {
+        "total": "134340",
+        "discount": "1230",
+        "nonTaxable": "135550",
+        "taxable": "17195.62",
+        "vat": "13%",
+        "grandTotal": "NaN"
+      }
     }
   ]
 }

@@ -10,7 +10,7 @@ export default function page() {
     const { data: allTransactionsData } = useTransactionsQuery({});
     const { data: allSuppliersData } = useSuppliersQuery({});
 
-    const modifiedData: any[] = allTransactionsData.map((i: any) => {
+    const modifiedData: any[] = allTransactionsData?.map((i: any) => {
         const findName = allSuppliersData.find(
             (j: any) => j.id === i.supplierName
         );
@@ -30,6 +30,8 @@ export default function page() {
             }
         )
     })
+
+    console.log("modifiedData->", typeof modifiedData, modifiedData)
 
     return (
         <>
