@@ -138,7 +138,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
 
     const { errors } = formState;
 
-    // console.log("error->", errors);
+    console.log("error->", errors);
 
     const { fields, append, remove } = useFieldArray({
         name: "invoiceItems",
@@ -316,6 +316,8 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                         <Trash className="h-4 w-4" />
                     </Button>
                 )}
+
+
             </div>
             <Separator />
             <Form {...form}>
@@ -480,25 +482,32 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                                 handleSelectProduct={handleSelectProduct}
                                                 allProductsData={allProductsData}
                                             />
+                                            <p className="error">{errors?.invoiceItems?.[`${index}`]?.productId?.message}</p>
                                         </TableCell>
 
                                         <TableCell>
                                             <Input type="text" disabled placeholder="" {...register(`invoiceItems.${index}.batch` as const)} />
+                                            <p className="error">{errors?.invoiceItems?.[`${index}`]?.batch?.message}</p>
                                         </TableCell>
                                         <TableCell>
                                             <Input type="text" disabled placeholder="" {...register(`invoiceItems.${index}.warehouse` as const)} />
+                                            <p className="error">{errors?.invoiceItems?.[`${index}`]?.warehouse?.message}</p>
                                         </TableCell>
                                         <TableCell>
                                             <Input min="0" className="text-right" type="number" placeholder="" {...register(`invoiceItems.${index}.quantity` as const, { valueAsNumber: true })} onInput={(event) => calculateAmount(index)} />
+                                            <p className="error">{errors?.invoiceItems?.[`${index}`]?.quantity?.message}</p>
                                         </TableCell>
                                         <TableCell>
                                             <Input className="text-right" disabled type="number" placeholder="" {...register(`invoiceItems.${index}.rate` as const)} />
+                                            <p className="error">{errors?.invoiceItems?.[`${index}`]?.rate?.message}</p>
                                         </TableCell>
                                         <TableCell>
                                             <Input min="0" className="text-right" type="number" placeholder="" {...register(`invoiceItems.${index}.discount` as const, { valueAsNumber: true })} onInput={(event) => calculateAmount(index)} />
+                                            <p className="error">{errors?.invoiceItems?.[`${index}`]?.discount?.message}</p>
                                         </TableCell>
                                         <TableCell>
                                             <Input className="text-right w-full" disabled type="number" placeholder="" {...register(`invoiceItems.${index}.amount` as const, { valueAsNumber: true })} />
+                                            <p className="error">{errors?.invoiceItems?.[`${index}`]?.amount?.message}</p>
                                         </TableCell>
                                         <TableCell><X onClick={() => { remove(index); removeInvoiceObject(index); }} color="#FF0000" className="cursor-pointer hover:scale-125" /></TableCell>
                                     </TableRow>
