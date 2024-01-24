@@ -1,424 +1,452 @@
 {
-    "suppliers": [
-      {
-        "id": "1",
-        "name": "Leanne Graham"
-      },
-      {
-        "id": "2",
-        "name": "Ervin Howell"
-      },
-      {
-        "id": "3",
-        "name": "Clementine Bauch"
-      },
-      {
-        "id": "4",
-        "name": "Patricia Lebsack"
-      },
-      {
-        "id": "5",
-        "name": "Chelsey Dietrich"
-      },
-      {
-        "id": "6",
-        "name": "Dennis Schulist"
-      },
-      {
-        "id": "7",
-        "name": "Kurtis Weissnat"
-      },
-      {
-        "id": "8",
-        "name": "Johns Group"
-      },
-      {
-        "id": "9",
-        "name": "Nicholas Runolfsdottir V"
-      },
-      {
-        "id": "10",
-        "name": "Glenna Reichert"
-      },
-      {
-        "id": "11",
-        "name": "Clementina DuBuque"
-      },
-      {
-        "id": "12",
-        "name": "Moriah.Stanton"
-      }
-    ],
-    "products": [
-      {
-        "id": "1",
-        "name": "Doking Black Tapioca Pearls Boba for Bubble Tea - 1 Kg",
-        "batch": "WABN",
-        "warehouse": "Birgunj",
-        "rate": 1234
-      },
-      {
-        "id": "2",
-        "name": "KIBU Cola Energy Drink 180ML",
-        "batch": "KPIT",
-        "warehouse": "Biratnagar",
-        "rate": 234
-      },
-      {
-        "id": "3",
-        "name": "Jeeru Club Soda 500Ml",
-        "batch": "ZYCC",
-        "warehouse": "Bhaktapur",
-        "rate": 4266
-      },
-      {
-        "id": "4",
-        "name": "Gorkha Strong Can 500ml",
-        "batch": "LERS",
-        "warehouse": "Bhaktapur",
-        "rate": 2346
-      },
-      {
-        "id": "5",
-        "name": "Coca-Cola Original Taste Soft Drink PET Bottle 250ML",
-        "batch": "EDTL",
-        "warehouse": "Baneshwor",
-        "rate": 365
-      },
-      {
-        "id": "6",
-        "name": "Doking Black Tapioca Pearls Boba for Bubble Tea - 1 Kg",
-        "batch": "OENG",
-        "warehouse": "Birgunj",
-        "rate": 3416
-      },
-      {
-        "id": "7",
-        "name": "Coca-Cola Original Taste Soft Drink PET Bottle 2.25L",
-        "batch": "KNJK",
-        "warehouse": "Bhaktapur",
-        "rate": 2436
-      },
-      {
-        "id": "8",
-        "name": "Rage Cold Coffee Hazelnut Latte 240ML",
-        "batch": "YMTI",
-        "warehouse": "Biratnagar",
-        "rate": 3246
-      },
-      {
-        "id": "9",
-        "name": "Costa Brava Tonic Water 330ML",
-        "batch": "MYRD",
-        "warehouse": "Biratnagar",
-        "rate": 2346
-      },
-      {
-        "id": "10",
-        "name": "London Dry Ginger Ale 250ML",
-        "batch": "SVCU",
-        "warehouse": "Pokhara",
-        "rate": 2346
-      },
-      {
-        "id": "11",
-        "name": "OKF Coffee Drink Caffe Mocha 240ML",
-        "batch": "AGAF",
-        "warehouse": "Pokhara",
-        "rate": 234
-      }
-    ],
-    "transactions": [
-      {
-        "id": "84d7",
-        "supplierName": "3",
-        "deliveryDate": "2024-01-15T18:15:00.000Z",
-        "referenceNo": "sfdgsdfg33",
-        "invoiceItems": [
-          {
-            "productId": "3",
-            "batch": "ZYCC",
-            "warehouse": "Bhaktapur",
-            "quantity": 20,
-            "rate": 4266,
-            "discount": 330,
-            "amount": 84990
-          },
-          {
-            "productId": "2",
-            "batch": "KPIT",
-            "warehouse": "Biratnagar",
-            "quantity": 20,
-            "rate": 234,
-            "discount": 30,
-            "amount": 4650
-          }
-        ],
-        "note": "adgasd",
-        "conditions": "adgasdg"
-      },
-      {
-        "id": "42f0",
-        "supplierName": "3",
-        "deliveryDate": "2024-01-15T18:15:00.000Z",
-        "referenceNo": "2yy398y2983",
-        "invoiceItems": [
-          {
-            "productId": "3",
-            "batch": "ZYCC",
-            "warehouse": "Bhaktapur",
-            "quantity": 20,
-            "rate": 4266,
-            "discount": 30,
-            "amount": 85290
-          },
-          {
-            "productId": "9",
-            "batch": "MYRD",
-            "warehouse": "Biratnagar",
-            "quantity": 200,
-            "rate": 2346,
-            "discount": 20,
-            "amount": 469180
-          }
-        ],
-        "note": "hello",
-        "conditions": "world"
-      },
-      {
-        "id": "7555",
-        "supplierName": "3",
-        "deliveryDate": "2024-01-15T18:15:00.000Z",
-        "referenceNo": "2yy398y2983",
-        "invoiceItems": [
-          {
-            "productId": "3",
-            "batch": "ZYCC",
-            "warehouse": "Bhaktapur",
-            "quantity": 20,
-            "rate": 4266,
-            "discount": 30,
-            "amount": 85290
-          },
-          {
-            "productId": "9",
-            "batch": "MYRD",
-            "warehouse": "Biratnagar",
-            "quantity": 200,
-            "rate": 2346,
-            "discount": 20,
-            "amount": 469180
-          }
-        ],
-        "note": "hello",
-        "conditions": "world"
-      },
-      {
-        "id": "8d34",
-        "supplierName": "2",
-        "deliveryDate": "2024-01-15T18:15:00.000Z",
-        "referenceNo": "asdgasdhg",
-        "invoiceItems": [
-          {
-            "productId": "3",
-            "batch": "ZYCC",
-            "warehouse": "Bhaktapur",
-            "quantity": 20,
-            "rate": 4266,
-            "discount": 20,
-            "amount": 85300
-          }
-        ],
-        "note": "",
-        "conditions": ""
-      },
-      {
-        "id": "9a0d",
-        "supplierName": "2",
-        "deliveryDate": "2024-01-15T18:15:00.000Z",
-        "referenceNo": "asdgasdhg",
-        "invoiceItems": [
-          {
-            "productId": "3",
-            "batch": "ZYCC",
-            "warehouse": "Bhaktapur",
-            "quantity": 20,
-            "rate": 4266,
-            "discount": 20,
-            "amount": 85300
-          }
-        ],
-        "note": "",
-        "conditions": ""
-      },
-      {
-        "id": "1811",
-        "supplierName": "2",
-        "deliveryDate": "2024-01-15T18:15:00.000Z",
-        "referenceNo": "asdgasdhg",
-        "invoiceItems": [],
-        "note": "",
-        "conditions": ""
-      },
-      {
-        "id": "b4ce",
-        "supplierName": "2",
-        "deliveryDate": "2024-01-15T18:15:00.000Z",
-        "referenceNo": "1352345",
-        "invoiceItems": [
-          {
-            "productId": "3",
-            "batch": "ZYCC",
-            "warehouse": "Bhaktapur",
-            "quantity": 10,
-            "rate": 4266,
-            "discount": 0,
-            "amount": 42660
-          }
-        ],
-        "note": "",
-        "conditions": ""
-      },
-      {
-        "id": "d38c",
-        "supplierName": "2",
-        "deliveryDate": "2024-01-10T18:15:00.000Z",
-        "referenceNo": "2532345",
-        "invoiceItems": [
-          {
-            "productId": "3",
-            "batch": "ZYCC",
-            "warehouse": "Bhaktapur",
-            "quantity": 10,
-            "rate": 4266,
-            "discount": 10,
-            "amount": 42650
-          }
-        ],
-        "note": "",
-        "conditions": ""
-      },
-      {
-        "id": "90d6",
-        "supplierName": "8",
-        "deliveryDate": "2024-01-24T18:15:00.000Z",
-        "referenceNo": "82137587y",
-        "invoiceItems": [
-          {
-            "productId": "2",
-            "batch": "KPIT",
-            "warehouse": "Biratnagar",
-            "quantity": 10,
-            "rate": 234,
-            "discount": 100,
-            "amount": 2240
-          },
-          {
-            "productId": "8",
-            "batch": "YMTI",
-            "warehouse": "Biratnagar",
-            "quantity": 20,
-            "rate": 3246,
-            "discount": 20,
-            "amount": 64900
-          },
-          {
-            "productId": "10",
-            "batch": "SVCU",
-            "warehouse": "Pokhara",
-            "quantity": 200,
-            "rate": 2346,
-            "discount": 0,
-            "amount": 469200
-          }
-        ],
-        "note": "asdgjasjg",
-        "conditions": "adgasdgasd"
-      },
-      {
-        "id": "4888",
-        "supplierName": "3",
-        "deliveryDate": "2024-01-09T18:15:00.000Z",
-        "referenceNo": "adgadg",
-        "invoiceItems": [
-          {
-            "productId": "8",
-            "batch": "YMTI",
-            "warehouse": "Biratnagar",
-            "quantity": 20,
-            "rate": 3246,
-            "discount": 1000,
-            "amount": 63920
-          }
-        ],
-        "note": "sfasf",
-        "conditions": ""
-      },
-      {
-        "id": "5185",
-        "supplierName": "11",
-        "deliveryDate": "2024-01-22T18:15:00.000Z",
-        "referenceNo": "asdgasdg",
-        "invoiceItems": [
-          {
-            "productId": "3",
-            "batch": "ZYCC",
-            "warehouse": "Bhaktapur",
-            "quantity": 20,
-            "rate": 4266,
-            "discount": 500,
-            "amount": 84820
-          },
-          {
-            "productId": "7",
-            "batch": "KNJK",
-            "warehouse": "Bhaktapur",
-            "quantity": 10,
-            "rate": 2436,
-            "discount": 1000,
-            "amount": 23360
-          }
-        ],
-        "note": "",
-        "conditions": ""
-      },
-      {
-        "id": "6bd0",
-        "supplierName": "11",
-        "deliveryDate": "2024-01-22T18:15:00.000Z",
-        "referenceNo": "jasdiogiadsg",
-        "invoiceItems": [
-          {
-            "productId": "3",
-            "batch": "ZYCC",
-            "warehouse": "Bhaktapur",
-            "quantity": 100,
-            "rate": 4266,
-            "discount": 10000,
-            "amount": 416600
-          }
-        ],
-        "note": "",
-        "conditions": ""
-      },
-      {
-        "id": "8a18",
-        "supplierName": "3",
-        "deliveryDate": "2024-01-26T18:15:00.000Z",
-        "referenceNo": "575764",
-        "invoiceItems": [
-          {
-            "productId": "11",
-            "batch": "AGAF",
-            "warehouse": "Pokhara",
-            "quantity": 100,
-            "rate": 234,
-            "discount": 300,
-            "amount": 23100
-          }
-        ],
-        "note": "",
-        "conditions": ""
-      }
-    ]
-  }
+  "suppliers": [
+    {
+      "id": "1",
+      "name": "Leanne Graham"
+    },
+    {
+      "id": "2",
+      "name": "Ervin Howell"
+    },
+    {
+      "id": "3",
+      "name": "Clementine Bauch"
+    },
+    {
+      "id": "4",
+      "name": "Patricia Lebsack"
+    },
+    {
+      "id": "5",
+      "name": "Chelsey Dietrich"
+    },
+    {
+      "id": "6",
+      "name": "Dennis Schulist"
+    },
+    {
+      "id": "7",
+      "name": "Kurtis Weissnat"
+    },
+    {
+      "id": "8",
+      "name": "Johns Group"
+    },
+    {
+      "id": "9",
+      "name": "Nicholas Runolfsdottir V"
+    },
+    {
+      "id": "10",
+      "name": "Glenna Reichert"
+    },
+    {
+      "id": "11",
+      "name": "Clementina DuBuque"
+    },
+    {
+      "id": "12",
+      "name": "Moriah.Stanton"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Doking Black Tapioca Pearls Boba for Bubble Tea - 1 Kg",
+      "batch": "WABN",
+      "warehouse": "Birgunj",
+      "rate": 1234
+    },
+    {
+      "id": "2",
+      "name": "KIBU Cola Energy Drink 180ML",
+      "batch": "KPIT",
+      "warehouse": "Biratnagar",
+      "rate": 234
+    },
+    {
+      "id": "3",
+      "name": "Jeeru Club Soda 500Ml",
+      "batch": "ZYCC",
+      "warehouse": "Bhaktapur",
+      "rate": 4266
+    },
+    {
+      "id": "4",
+      "name": "Gorkha Strong Can 500ml",
+      "batch": "LERS",
+      "warehouse": "Bhaktapur",
+      "rate": 2346
+    },
+    {
+      "id": "5",
+      "name": "Coca-Cola Original Taste Soft Drink PET Bottle 250ML",
+      "batch": "EDTL",
+      "warehouse": "Baneshwor",
+      "rate": 365
+    },
+    {
+      "id": "6",
+      "name": "Doking Black Tapioca Pearls Boba for Bubble Tea - 1 Kg",
+      "batch": "OENG",
+      "warehouse": "Birgunj",
+      "rate": 3416
+    },
+    {
+      "id": "7",
+      "name": "Coca-Cola Original Taste Soft Drink PET Bottle 2.25L",
+      "batch": "KNJK",
+      "warehouse": "Bhaktapur",
+      "rate": 2436
+    },
+    {
+      "id": "8",
+      "name": "Rage Cold Coffee Hazelnut Latte 240ML",
+      "batch": "YMTI",
+      "warehouse": "Biratnagar",
+      "rate": 3246
+    },
+    {
+      "id": "9",
+      "name": "Costa Brava Tonic Water 330ML",
+      "batch": "MYRD",
+      "warehouse": "Biratnagar",
+      "rate": 2346
+    },
+    {
+      "id": "10",
+      "name": "London Dry Ginger Ale 250ML",
+      "batch": "SVCU",
+      "warehouse": "Pokhara",
+      "rate": 2346
+    },
+    {
+      "id": "11",
+      "name": "OKF Coffee Drink Caffe Mocha 240ML",
+      "batch": "AGAF",
+      "warehouse": "Pokhara",
+      "rate": 234
+    }
+  ],
+  "transactions": [
+    {
+      "id": "84d7",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "sfdgsdfg33",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 20,
+          "rate": 4266,
+          "discount": 330,
+          "amount": 84990
+        },
+        {
+          "productId": "2",
+          "batch": "KPIT",
+          "warehouse": "Biratnagar",
+          "quantity": 20,
+          "rate": 234,
+          "discount": 30,
+          "amount": 4650
+        }
+      ],
+      "note": "adgasd",
+      "conditions": "adgasdg"
+    },
+    {
+      "id": "42f0",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "2yy398y2983",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 20,
+          "rate": 4266,
+          "discount": 30,
+          "amount": 85290
+        },
+        {
+          "productId": "9",
+          "batch": "MYRD",
+          "warehouse": "Biratnagar",
+          "quantity": 200,
+          "rate": 2346,
+          "discount": 20,
+          "amount": 469180
+        }
+      ],
+      "note": "hello",
+      "conditions": "world"
+    },
+    {
+      "id": "7555",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "2yy398y2983",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 20,
+          "rate": 4266,
+          "discount": 30,
+          "amount": 85290
+        },
+        {
+          "productId": "9",
+          "batch": "MYRD",
+          "warehouse": "Biratnagar",
+          "quantity": 200,
+          "rate": 2346,
+          "discount": 20,
+          "amount": 469180
+        }
+      ],
+      "note": "hello",
+      "conditions": "world"
+    },
+    {
+      "id": "8d34",
+      "supplierName": "2",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "asdgasdhg",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 20,
+          "rate": 4266,
+          "discount": 20,
+          "amount": 85300
+        }
+      ],
+      "note": "",
+      "conditions": ""
+    },
+    {
+      "id": "9a0d",
+      "supplierName": "2",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "asdgasdhg",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 20,
+          "rate": 4266,
+          "discount": 20,
+          "amount": 85300
+        }
+      ],
+      "note": "",
+      "conditions": ""
+    },
+    {
+      "id": "1811",
+      "supplierName": "2",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "asdgasdhg",
+      "invoiceItems": [],
+      "note": "",
+      "conditions": ""
+    },
+    {
+      "id": "b4ce",
+      "supplierName": "2",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "1352345",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 10,
+          "rate": 4266,
+          "discount": 0,
+          "amount": 42660
+        }
+      ],
+      "note": "",
+      "conditions": ""
+    },
+    {
+      "id": "d38c",
+      "supplierName": "2",
+      "deliveryDate": "2024-01-10T18:15:00.000Z",
+      "referenceNo": "2532345",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 10,
+          "rate": 4266,
+          "discount": 10,
+          "amount": 42650
+        }
+      ],
+      "note": "",
+      "conditions": ""
+    },
+    {
+      "id": "90d6",
+      "supplierName": "8",
+      "deliveryDate": "2024-01-24T18:15:00.000Z",
+      "referenceNo": "82137587y",
+      "invoiceItems": [
+        {
+          "productId": "2",
+          "batch": "KPIT",
+          "warehouse": "Biratnagar",
+          "quantity": 10,
+          "rate": 234,
+          "discount": 100,
+          "amount": 2240
+        },
+        {
+          "productId": "8",
+          "batch": "YMTI",
+          "warehouse": "Biratnagar",
+          "quantity": 20,
+          "rate": 3246,
+          "discount": 20,
+          "amount": 64900
+        },
+        {
+          "productId": "10",
+          "batch": "SVCU",
+          "warehouse": "Pokhara",
+          "quantity": 200,
+          "rate": 2346,
+          "discount": 0,
+          "amount": 469200
+        }
+      ],
+      "note": "asdgjasjg",
+      "conditions": "adgasdgasd"
+    },
+    {
+      "id": "4888",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-09T18:15:00.000Z",
+      "referenceNo": "adgadg",
+      "invoiceItems": [
+        {
+          "productId": "8",
+          "batch": "YMTI",
+          "warehouse": "Biratnagar",
+          "quantity": 20,
+          "rate": 3246,
+          "discount": 1000,
+          "amount": 63920
+        }
+      ],
+      "note": "sfasf",
+      "conditions": ""
+    },
+    {
+      "id": "5185",
+      "supplierName": "11",
+      "deliveryDate": "2024-01-22T18:15:00.000Z",
+      "referenceNo": "asdgasdg",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 20,
+          "rate": 4266,
+          "discount": 500,
+          "amount": 84820
+        },
+        {
+          "productId": "7",
+          "batch": "KNJK",
+          "warehouse": "Bhaktapur",
+          "quantity": 10,
+          "rate": 2436,
+          "discount": 1000,
+          "amount": 23360
+        }
+      ],
+      "note": "",
+      "conditions": ""
+    },
+    {
+      "id": "6bd0",
+      "supplierName": "11",
+      "deliveryDate": "2024-01-22T18:15:00.000Z",
+      "referenceNo": "jasdiogiadsg",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 100,
+          "rate": 4266,
+          "discount": 10000,
+          "amount": 416600
+        }
+      ],
+      "note": "",
+      "conditions": ""
+    },
+    {
+      "id": "8a18",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-26T18:15:00.000Z",
+      "referenceNo": "575764",
+      "invoiceItems": [
+        {
+          "productId": "11",
+          "batch": "AGAF",
+          "warehouse": "Pokhara",
+          "quantity": 100,
+          "rate": 234,
+          "discount": 300,
+          "amount": 23100
+        }
+      ],
+      "note": "",
+      "conditions": ""
+    },
+    {
+      "id": "9dd3",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-24T18:15:00.000Z",
+      "referenceNo": "kasndk",
+      "invoiceItems": [
+        {
+          "productId": "3",
+          "batch": "ZYCC",
+          "warehouse": "Bhaktapur",
+          "quantity": 10,
+          "rate": 4266,
+          "discount": 20,
+          "amount": 42640
+        },
+        {
+          "productId": "10",
+          "batch": "SVCU",
+          "warehouse": "Pokhara",
+          "quantity": 20,
+          "rate": 2346,
+          "discount": 10,
+          "amount": 46910
+        }
+      ],
+      "note": "",
+      "conditions": ""
+    }
+  ]
+}

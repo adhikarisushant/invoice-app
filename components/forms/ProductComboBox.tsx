@@ -87,15 +87,15 @@ const ProductComboBox: React.FC<Props> = ({ handleSelectProduct, index, allProdu
 
                                     <div className="w-full flex items-center justify-between">
                                         <div className="self-start flex-col">
-                                            <p className="text-sm font-medium text-slate-800">{product.name}</p>
+                                            <p className="text-sm font-medium text-slate-800 dark:text-white">{product.name}</p>
                                             <div className="flex items-end justify-start space-x-12 space-y-4">
-                                                <p className="text-sm font-medium text-slate-700">Bottles</p>
-                                                <p className="text-sm font-medium text-slate-700">Batch: <span className="text-green-700">{product.batch}</span></p>
+                                                <p className="text-sm font-medium text-slate-700 dark:text-white">Bottles</p>
+                                                <p className="text-sm font-medium text-slate-700 dark:text-white">Batch: <span className="text-green-700 dark:text-green-500">{product.batch}</span></p>
                                             </div>
                                         </div>
                                         <div className="self-end flex-col space-y-4">
-                                            <p className="text-right text-sm font-medium text-slate-800">{product.warehouse}</p>
-                                            <p className="text-right text-sm font-medium text-slate-700">Rs.{product.rate}</p>
+                                            <p className="text-right text-sm font-medium text-slate-800 dark:text-white">{product.warehouse}</p>
+                                            <p className="text-right text-sm font-medium text-slate-700 dark:text-white">Rs.{product.rate}</p>
                                         </div>
                                     </div>
                                 </CommandItem>

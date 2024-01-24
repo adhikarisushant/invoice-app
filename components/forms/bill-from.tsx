@@ -42,6 +42,14 @@ import { useProductsQuery, useSuppliersQuery } from "@/redux/features/api/apiSli
 import ProductComboBox from "./ProductComboBox";
 import { useToast } from "@/components/ui/use-toast"
 
+interface InvoiceData {
+    index: number | null;
+    productId: string | null;
+    quantity: number | null;
+    rate: number | null;
+    discount: number | null;
+}
+
 interface Supplier {
     id: string;
     name: string
@@ -84,6 +92,33 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     const { data: allSuppliersData } = useSuppliersQuery({});
     const { data: allProductsData } = useProductsQuery({});
 
+    const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [width, setWidth] = useState();
+    const title = initialData ? "Edit Debit Note" : "New Debit Note";
+    const description = initialData ? "Edit a Invoice." : "Add a new Invoice";
+    const action = initialData ? "Save changes" : "Create";
+
+    const [amount, setAmount] = useState<Number>(0);
+    console.log("reduce amount-", amount)
+    const [discount, setDiscount] = useState<Number>(0);
+    const [invoiceData, setInvoiceData] = useState<InvoiceData[]>([])
+
+    useEffect(() => {
+        if (invoiceData.length > 0) {
+            // Calculate the sum of rates
+            // @ts-ignore
+            const totalRate = invoiceData.reduce((acc, item) => acc + (item.quantity * item.rate), 0);
+            setAmount(totalRate)
+
+            // Calculate the sum of discounts
+            // @ts-ignore
+            const totalDiscount = invoiceData.reduce((acc, item) => acc + item.discount, 0);
+            setDiscount(totalDiscount)
+        }
+
+    }, [invoiceData])
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -99,7 +134,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
 
     const { errors } = formState;
 
-    // console.log("error->", errors);
+    console.log("error->", errors);
 
     const { fields, append, remove } = useFieldArray({
         name: "invoiceItems",
@@ -165,6 +200,22 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
         calculateAmount(index);
     }
 
+    const addOrUpdateInvoiceObject = (newObj: InvoiceData): void => {
+        // Check if object with the same id exists in the array
+        const existingObjIndex = invoiceData.findIndex(obj => obj.index === newObj.index);
+
+        if (existingObjIndex !== -1) {
+            // If object with the same id exists, replace it with the new object
+            const newArray = [...invoiceData];
+            newArray[existingObjIndex] = newObj;
+            setInvoiceData(newArray);
+        } else {
+            // If object with the same id does not exist, add the new object to the array
+            setInvoiceData(prevArray => [...prevArray, newObj]);
+        }
+    };
+
+
 
     let inputTimer: any;
 
@@ -176,13 +227,23 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
         // Set a new timeout for 5 seconds
         inputTimer = setTimeout(() => {
             const values = getValues([`invoiceItems.${index}.productId`, `invoiceItems.${index}.quantity`, `invoiceItems.${index}.rate`, `invoiceItems.${index}.discount`, `invoiceItems.${index}.amount`])
-            console.log("values->", values)
-            console.log("product->", values[0])
-            console.log("quantity->", values[1])
-            console.log("rate->", values[2])
-            console.log("discount->", values[3])
+            // console.log("values->", values)
+            // console.log("product->", values[0])
+            // console.log("quantity->", values[1])
+            // console.log("rate->", values[2])
+            // console.log("discount->", values[3])
 
             const amount = (values[1] * values[2]) - values[3];
+
+            const newObj: InvoiceData = {
+                index: index,
+                productId: values[0],
+                quantity: values[1],
+                rate: values[2],
+                discount: values[3]
+            }
+
+            addOrUpdateInvoiceObject(newObj)
 
             setValue(`invoiceItems.${index}.amount`, amount);
 
@@ -191,12 +252,6 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     }
 
 
-    const [open, setOpen] = useState(false);
-    const [loading, setLoading] = useState(false);
-    const title = initialData ? "Edit Debit Note" : "New Debit Note";
-    const description = initialData ? "Edit a Invoice." : "Add a new Invoice";
-    const action = initialData ? "Save changes" : "Create";
-    const [width, setWidth] = useState();
 
     useEffect(() => {
         // @ts-ignore
@@ -443,7 +498,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                 <TableBody>
                                     <TableRow>
                                         <TableCell className="font-medium">Total</TableCell>
-                                        <TableCell className="text-right">0</TableCell>
+                                        <TableCell className="text-right">Rs. {amount.toString()}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell className="font-medium">Total Excise Duty</TableCell>
@@ -451,7 +506,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                     </TableRow>
                                     <TableRow>
                                         <TableCell className="font-medium">Discount</TableCell>
-                                        <TableCell className="text-right">0</TableCell>
+                                        <TableCell className="text-right">Rs. {discount.toString()}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell className="font-medium">Non Taxable Total</TableCell>
@@ -469,7 +524,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                                 <TableFooter>
                                     <TableRow>
                                         <TableCell>Grand Total</TableCell>
-                                        <TableCell className="text-right">$2,500.00</TableCell>
+                                        <TableCell className="text-right">Rs. 2,50000</TableCell>
                                     </TableRow>
                                 </TableFooter>
                             </Table>
@@ -495,13 +550,13 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                             </FormItem>
                         )}
                     />
-                    <div className="flex justify-end mr-6">
-                        <Button type="submit" disabled={loading} className="w-36 ml-auto">
-                            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
 
-                            {action}
-                        </Button>
-                    </div>
+                    <Button type="submit" disabled={loading} className="w-36 ml-auto">
+                        {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+
+                        {action}
+                    </Button>
+
 
                 </form >
             </Form >
