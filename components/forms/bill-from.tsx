@@ -138,7 +138,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
 
     const { errors } = formState;
 
-    console.log("error->", errors);
+    // console.log("error->", errors);
 
     const { fields, append, remove } = useFieldArray({
         name: "invoiceItems",
@@ -521,7 +521,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
                         </TableBody>
                     </Table>
                     <Separator />
-                    <div className="flex items-start justify-between space-x-28 px-6">
+                    <div className="flex flex-col md:flex-row items-start justify-between md:space-x-28  2xl:space-x-64 md:px-6 2xl:px-10">
                         <div className="w-1/2">
                             <FormField
                                 control={form.control}
