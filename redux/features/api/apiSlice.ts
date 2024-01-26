@@ -5,6 +5,7 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:8000/",
   }),
+  tagTypes: ["Transactions"],
   endpoints: (builder) => ({
     suppliers: builder.query({
       query: () => ({
@@ -23,9 +24,24 @@ export const apiSlice = createApi({
         url: "transactions",
         method: "GET",
       }),
+      transformResponse: (res: any) =>
+        res.sort((a: any, b: any) => b.referenceNo - a.referenceNo),
+      providesTags: ["Transactions"],
+    }),
+    addTransaction: builder.mutation({
+      query: (transaction) => ({
+        url: "transactions",
+        method: "POST",
+        body: transaction,
+      }),
+      invalidatesTags: ["Transactions"],
     }),
   }),
 });
 
-export const { useSuppliersQuery, useProductsQuery, useTransactionsQuery } =
-  apiSlice;
+export const {
+  useSuppliersQuery,
+  useProductsQuery,
+  useTransactionsQuery,
+  useAddTransactionMutation,
+} = apiSlice;

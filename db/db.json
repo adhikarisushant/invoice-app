@@ -130,533 +130,6 @@
   ],
   "transactions": [
     {
-      "id": "84d7",
-      "supplierName": "3",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "sfdgsdfg33",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 20,
-          "rate": 4266,
-          "discount": 330,
-          "amount": 84990
-        },
-        {
-          "productId": "2",
-          "batch": "KPIT",
-          "warehouse": "Biratnagar",
-          "quantity": 20,
-          "rate": 234,
-          "discount": 30,
-          "amount": 4650
-        }
-      ],
-      "note": "adgasd",
-      "conditions": "adgasdg"
-    },
-    {
-      "id": "42f0",
-      "supplierName": "3",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "2yy398y2983",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 20,
-          "rate": 4266,
-          "discount": 30,
-          "amount": 85290
-        },
-        {
-          "productId": "9",
-          "batch": "MYRD",
-          "warehouse": "Biratnagar",
-          "quantity": 200,
-          "rate": 2346,
-          "discount": 20,
-          "amount": 469180
-        }
-      ],
-      "note": "hello",
-      "conditions": "world"
-    },
-    {
-      "id": "7555",
-      "supplierName": "3",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "2yy398y2983",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 20,
-          "rate": 4266,
-          "discount": 30,
-          "amount": 85290
-        },
-        {
-          "productId": "9",
-          "batch": "MYRD",
-          "warehouse": "Biratnagar",
-          "quantity": 200,
-          "rate": 2346,
-          "discount": 20,
-          "amount": 469180
-        }
-      ],
-      "note": "hello",
-      "conditions": "world"
-    },
-    {
-      "id": "8d34",
-      "supplierName": "2",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "asdgasdhg",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 20,
-          "rate": 4266,
-          "discount": 20,
-          "amount": 85300
-        }
-      ],
-      "note": "",
-      "conditions": ""
-    },
-    {
-      "id": "9a0d",
-      "supplierName": "2",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "asdgasdhg",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 20,
-          "rate": 4266,
-          "discount": 20,
-          "amount": 85300
-        }
-      ],
-      "note": "",
-      "conditions": ""
-    },
-    {
-      "id": "1811",
-      "supplierName": "2",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "asdgasdhg",
-      "invoiceItems": [],
-      "note": "",
-      "conditions": ""
-    },
-    {
-      "id": "b4ce",
-      "supplierName": "2",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "1352345",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 10,
-          "rate": 4266,
-          "discount": 0,
-          "amount": 42660
-        }
-      ],
-      "note": "",
-      "conditions": ""
-    },
-    {
-      "id": "d38c",
-      "supplierName": "2",
-      "deliveryDate": "2024-01-10T18:15:00.000Z",
-      "referenceNo": "2532345",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 10,
-          "rate": 4266,
-          "discount": 10,
-          "amount": 42650
-        }
-      ],
-      "note": "",
-      "conditions": ""
-    },
-    {
-      "id": "90d6",
-      "supplierName": "8",
-      "deliveryDate": "2024-01-24T18:15:00.000Z",
-      "referenceNo": "82137587y",
-      "invoiceItems": [
-        {
-          "productId": "2",
-          "batch": "KPIT",
-          "warehouse": "Biratnagar",
-          "quantity": 10,
-          "rate": 234,
-          "discount": 100,
-          "amount": 2240
-        },
-        {
-          "productId": "8",
-          "batch": "YMTI",
-          "warehouse": "Biratnagar",
-          "quantity": 20,
-          "rate": 3246,
-          "discount": 20,
-          "amount": 64900
-        },
-        {
-          "productId": "10",
-          "batch": "SVCU",
-          "warehouse": "Pokhara",
-          "quantity": 200,
-          "rate": 2346,
-          "discount": 0,
-          "amount": 469200
-        }
-      ],
-      "note": "asdgjasjg",
-      "conditions": "adgasdgasd"
-    },
-    {
-      "id": "4888",
-      "supplierName": "3",
-      "deliveryDate": "2024-01-09T18:15:00.000Z",
-      "referenceNo": "adgadg",
-      "invoiceItems": [
-        {
-          "productId": "8",
-          "batch": "YMTI",
-          "warehouse": "Biratnagar",
-          "quantity": 20,
-          "rate": 3246,
-          "discount": 1000,
-          "amount": 63920
-        }
-      ],
-      "note": "sfasf",
-      "conditions": ""
-    },
-    {
-      "id": "5185",
-      "supplierName": "11",
-      "deliveryDate": "2024-01-22T18:15:00.000Z",
-      "referenceNo": "asdgasdg",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 20,
-          "rate": 4266,
-          "discount": 500,
-          "amount": 84820
-        },
-        {
-          "productId": "7",
-          "batch": "KNJK",
-          "warehouse": "Bhaktapur",
-          "quantity": 10,
-          "rate": 2436,
-          "discount": 1000,
-          "amount": 23360
-        }
-      ],
-      "note": "",
-      "conditions": ""
-    },
-    {
-      "id": "6bd0",
-      "supplierName": "11",
-      "deliveryDate": "2024-01-22T18:15:00.000Z",
-      "referenceNo": "jasdiogiadsg",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 100,
-          "rate": 4266,
-          "discount": 10000,
-          "amount": 416600
-        }
-      ],
-      "note": "",
-      "conditions": ""
-    },
-    {
-      "id": "8a18",
-      "supplierName": "3",
-      "deliveryDate": "2024-01-26T18:15:00.000Z",
-      "referenceNo": "575764",
-      "invoiceItems": [
-        {
-          "productId": "11",
-          "batch": "AGAF",
-          "warehouse": "Pokhara",
-          "quantity": 100,
-          "rate": 234,
-          "discount": 300,
-          "amount": 23100
-        }
-      ],
-      "note": "",
-      "conditions": ""
-    },
-    {
-      "id": "9dd3",
-      "supplierName": "3",
-      "deliveryDate": "2024-01-24T18:15:00.000Z",
-      "referenceNo": "kasndk",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 10,
-          "rate": 4266,
-          "discount": 20,
-          "amount": 42640
-        },
-        {
-          "productId": "10",
-          "batch": "SVCU",
-          "warehouse": "Pokhara",
-          "quantity": 20,
-          "rate": 2346,
-          "discount": 10,
-          "amount": 46910
-        }
-      ],
-      "note": "",
-      "conditions": ""
-    },
-    {
-      "id": "c942",
-      "supplierName": "10",
-      "deliveryDate": "2024-01-23T18:15:00.000Z",
-      "referenceNo": "yytdtydty",
-      "invoiceItems": [
-        {
-          "productId": "3",
-          "batch": "ZYCC",
-          "warehouse": "Bhaktapur",
-          "quantity": 10,
-          "rate": 4266,
-          "discount": 500,
-          "amount": 42160
-        },
-        {
-          "productId": "9",
-          "batch": "MYRD",
-          "warehouse": "Biratnagar",
-          "quantity": 20,
-          "rate": 2346,
-          "discount": 0,
-          "amount": 46920
-        },
-        {
-          "productId": "7",
-          "batch": "KNJK",
-          "warehouse": "Bhaktapur",
-          "quantity": 9,
-          "rate": 2436,
-          "discount": 20,
-          "amount": 21904
-        }
-      ],
-      "note": "hello",
-      "conditions": "santosh"
-    },
-    {
-      "id": "645a",
-      "supplierName": "4",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "sdgadsg",
-      "invoiceItems": [
-        {
-          "productId": "7",
-          "batch": "KNJK",
-          "warehouse": "Bhaktapur",
-          "quantity": 10,
-          "rate": 2436,
-          "discount": 20,
-          "amount": 24340
-        }
-      ],
-      "note": "",
-      "conditions": "",
-      "invoice": {
-        "total": "24360",
-        "discount": "0",
-        "nonTaxable": "0",
-        "taxable": "0",
-        "vat": "13%",
-        "grandTotal": "0"
-      }
-    },
-    {
-      "id": "5c0d",
-      "supplierName": "2",
-      "deliveryDate": "2024-01-24T18:15:00.000Z",
-      "referenceNo": "hellosangam",
-      "invoiceItems": [
-        {
-          "productId": "4",
-          "batch": "LERS",
-          "warehouse": "Bhaktapur",
-          "quantity": 10,
-          "rate": 2346,
-          "discount": 200,
-          "amount": 23260
-        },
-        {
-          "productId": "7",
-          "batch": "KNJK",
-          "warehouse": "Bhaktapur",
-          "quantity": 20,
-          "rate": 2436,
-          "discount": 1000,
-          "amount": 47720
-        },
-        {
-          "productId": "10",
-          "batch": "SVCU",
-          "warehouse": "Pokhara",
-          "quantity": 25,
-          "rate": 2346,
-          "discount": 10,
-          "amount": 58640
-        },
-        {
-          "productId": "11",
-          "batch": "AGAF",
-          "warehouse": "Pokhara",
-          "quantity": 15,
-          "rate": 234,
-          "discount": 250,
-          "amount": 3260
-        }
-      ],
-      "note": "I am Sushant.",
-      "conditions": "no terms.",
-      "invoice": {
-        "total": "134340",
-        "discount": "1230",
-        "nonTaxable": "135550",
-        "taxable": "17195.62",
-        "vat": "13%",
-        "grandTotal": "NaN"
-      }
-    },
-    {
-      "id": "be5d",
-      "supplierName": "3",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "sgad",
-      "invoiceItems": [
-        {
-          "productId": "2",
-          "batch": "KPIT",
-          "warehouse": "Biratnagar",
-          "quantity": 2,
-          "rate": 234,
-          "discount": 10,
-          "amount": 458
-        }
-      ],
-      "note": "",
-      "conditions": "",
-      "invoice": {
-        "total": "234",
-        "discount": "10",
-        "nonTaxable": "236",
-        "taxable": "30.42",
-        "vat": "13%",
-        "grandTotal": "234"
-      }
-    },
-    {
-      "id": "2a1a",
-      "supplierName": "3",
-      "deliveryDate": "2024-01-15T18:15:00.000Z",
-      "referenceNo": "123423",
-      "invoiceItems": [
-        {
-          "productId": "2",
-          "batch": "KPIT",
-          "warehouse": "Biratnagar",
-          "quantity": 10,
-          "rate": 234,
-          "discount": 220,
-          "amount": 2120
-        },
-        {
-          "productId": "11",
-          "batch": "AGAF",
-          "warehouse": "Pokhara",
-          "quantity": 12,
-          "rate": 234,
-          "discount": 20,
-          "amount": 2788
-        },
-        {
-          "productId": "11",
-          "batch": "AGAF",
-          "warehouse": "Pokhara",
-          "quantity": 20,
-          "rate": 234,
-          "discount": 11,
-          "amount": 4669
-        },
-        {
-          "productId": "5",
-          "batch": "EDTL",
-          "warehouse": "Baneshwor",
-          "quantity": 123,
-          "rate": 365,
-          "discount": 345,
-          "amount": 44550
-        },
-        {
-          "productId": "10",
-          "batch": "SVCU",
-          "warehouse": "Pokhara",
-          "quantity": 2,
-          "rate": 2346,
-          "discount": 12,
-          "amount": 4680
-        }
-      ],
-      "note": "adfsad",
-      "conditions": "asd this",
-      "invoice": {
-        "total": "59415",
-        "discount": "608",
-        "nonTaxable": "60023",
-        "taxable": "7802.990000000001",
-        "vat": "13%",
-        "grandTotal": "NaN"
-      }
-    },
-    {
       "id": "ae51",
       "supplierName": "4",
       "deliveryDate": "2024-01-24T18:15:00.000Z",
@@ -690,6 +163,186 @@
         "taxable": "-404134",
         "vat": "13%",
         "grandTotal": "-456671.42"
+      }
+    },
+    {
+      "id": "df80",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-13T18:15:00.000Z",
+      "referenceNo": "3245234623",
+      "invoiceItems": [
+        {
+          "productId": "2",
+          "batch": "KPIT",
+          "warehouse": "Biratnagar",
+          "quantity": 20,
+          "rate": 234,
+          "discount": 240,
+          "amount": 4440
+        }
+      ],
+      "note": "4325",
+      "conditions": "524324",
+      "invoice": {
+        "total": "4680",
+        "discount": "20",
+        "nonTaxable": "4680",
+        "taxable": "4660",
+        "vat": "13%",
+        "grandTotal": "5265.8"
+      }
+    },
+    {
+      "id": "3f33",
+      "supplierName": "4",
+      "deliveryDate": "2024-01-09T18:15:00.000Z",
+      "referenceNo": "32462346",
+      "invoiceItems": [
+        {
+          "productId": "6",
+          "batch": "OENG",
+          "warehouse": "Birgunj",
+          "quantity": 20,
+          "rate": 3416,
+          "discount": 330,
+          "amount": 67990
+        }
+      ],
+      "note": "",
+      "conditions": "",
+      "invoice": {
+        "total": "68320",
+        "discount": "30",
+        "nonTaxable": "68320",
+        "taxable": "68290",
+        "vat": "13%",
+        "grandTotal": "77167.7"
+      }
+    },
+    {
+      "id": "fa9a",
+      "supplierName": "10",
+      "deliveryDate": "2024-01-16T18:15:00.000Z",
+      "referenceNo": "315325",
+      "invoiceItems": [
+        {
+          "productId": "2",
+          "batch": "KPIT",
+          "warehouse": "Biratnagar",
+          "quantity": 120,
+          "rate": 234,
+          "discount": 3320,
+          "amount": 24760
+        },
+        {
+          "productId": "4",
+          "batch": "LERS",
+          "warehouse": "Bhaktapur",
+          "quantity": 20,
+          "rate": 2346,
+          "discount": 3403,
+          "amount": 43517
+        },
+        {
+          "productId": "7",
+          "batch": "KNJK",
+          "warehouse": "Bhaktapur",
+          "quantity": 40,
+          "rate": 2436,
+          "discount": 2340,
+          "amount": 95100
+        }
+      ],
+      "note": "hello",
+      "conditions": "world!",
+      "invoice": {
+        "total": "659640",
+        "discount": "9063",
+        "nonTaxable": "172440",
+        "taxable": "650577",
+        "vat": "13%",
+        "grandTotal": "735152.01"
+      }
+    },
+    {
+      "id": "fa20",
+      "supplierName": "3",
+      "deliveryDate": "2024-01-09T18:15:00.000Z",
+      "referenceNo": "asdsdf",
+      "invoiceItems": [
+        {
+          "productId": "2",
+          "batch": "KPIT",
+          "warehouse": "Biratnagar",
+          "quantity": 10,
+          "rate": 234,
+          "discount": 20,
+          "amount": 2320
+        }
+      ],
+      "note": "dasasdg",
+      "conditions": "sdgsdg",
+      "invoice": {
+        "total": "2340",
+        "discount": "0",
+        "nonTaxable": "2340",
+        "taxable": "2340",
+        "vat": "13%",
+        "grandTotal": "2644.2"
+      }
+    },
+    {
+      "id": "7bcb",
+      "supplierName": "10",
+      "deliveryDate": "2024-01-09T18:15:00.000Z",
+      "referenceNo": "dasfasdf",
+      "invoiceItems": [
+        {
+          "productId": "6",
+          "batch": "OENG",
+          "warehouse": "Birgunj",
+          "quantity": 20,
+          "rate": 3416,
+          "discount": 20,
+          "amount": 68300
+        }
+      ],
+      "note": "adsgasd",
+      "conditions": "sadgasdg",
+      "invoice": {
+        "total": "68320",
+        "discount": "0",
+        "nonTaxable": "68320",
+        "taxable": "68320",
+        "vat": "13%",
+        "grandTotal": "77201.6"
+      }
+    },
+    {
+      "id": "3cb7",
+      "supplierName": "4",
+      "deliveryDate": "2024-01-15T18:15:00.000Z",
+      "referenceNo": "sdfsdg",
+      "invoiceItems": [
+        {
+          "productId": "2",
+          "batch": "KPIT",
+          "warehouse": "Biratnagar",
+          "quantity": 30,
+          "rate": 234,
+          "discount": 340,
+          "amount": 6680
+        }
+      ],
+      "note": "dfgdg",
+      "conditions": "adgsdg",
+      "invoice": {
+        "total": "7020",
+        "discount": "30",
+        "nonTaxable": "7020",
+        "taxable": "6990",
+        "vat": "13%",
+        "grandTotal": "7898.7"
       }
     }
   ]

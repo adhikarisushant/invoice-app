@@ -38,7 +38,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { CalendarIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
-import { useProductsQuery, useSuppliersQuery } from "@/redux/features/api/apiSlice";
+import { useAddTransactionMutation, useProductsQuery, useSuppliersQuery } from "@/redux/features/api/apiSlice";
 import ProductComboBox from "./ProductComboBox";
 import { useToast } from "@/components/ui/use-toast";
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -110,7 +110,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
     const router = useRouter()
     const { data: allSuppliersData } = useSuppliersQuery({});
     const { data: allProductsData } = useProductsQuery({});
-
+    const [addTransaction] = useAddTransactionMutation()
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [width, setWidth] = useState();
@@ -147,7 +147,7 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
 
     const { register, control, handleSubmit, formState, setValue, getValues, reset } = form;
 
-    const { errors } = formState;
+    const { errors, isSubmitSuccessful } = formState;
 
     // console.log("error->", errors);
 
@@ -160,11 +160,10 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
         setLoading(true);
         console.log("data->", { values })
         try {
-            const response = await axios.post('http://localhost:8000/transactions', JSON.stringify(values));
+            addTransaction(values)
 
-            console.log("data->", { values })
         } catch (error: any) {
-            reset()
+            // reset()
             console.log("error")
             toast({
                 variant: "destructive",
@@ -318,6 +317,20 @@ export const BillForm: React.FC<BillFormProps> = ({ initialData }) => {
         setGrandTotal(taxable + (taxable * 0.13))
         setValue("invoice.grandTotal", `${grandTotal}`);
     }, [taxable])
+
+    useEffect(() => {
+
+        if (isSubmitSuccessful) {
+            setAmount(0)
+            setDiscount(0)
+            setNonTaxable(0)
+            setTaxable(0)
+            setGrandTotal(0)
+            setInvoiceData([])
+        }
+    }, [isSubmitSuccessful])
+
+
 
     return (
         <>
