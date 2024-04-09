@@ -1,6 +1,6 @@
 "use client";
 import BreadCrumb from "@/components/breadcrumb";
-import { BillForm } from "@/components/forms/bill-from";
+import { BillForm } from "@/components/forms/Bill-from";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
 
